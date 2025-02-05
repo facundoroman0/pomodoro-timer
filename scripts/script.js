@@ -6,6 +6,9 @@ let cycleCounter = document.getElementById('cycle-counter');
 
 const workTime = 5;
 const breakTime = 2;
+
+updateTimer(workTime);
+
 let timeLeft = workTime;
 let timer;
 let isRunning = false;
@@ -21,7 +24,7 @@ function updateTimer(timeLeft) {
 function switchPhase() {
     if (isBreak) {
         cycles++;
-        cycleCounter.textContent = `Ciclos completados: ${cycles}`;
+        cycleCounter.textContent = `${cycles}/4`;
         if (cycles < 4) {
             isBreak = false;
             timeLeft = workTime;
@@ -65,7 +68,7 @@ function resetTimer() {
     isBreak = false;
     cycles = 0;
     updateTimer(timeLeft);
-    cycleCounter.textContent = `Ciclos completados: ${cycles}`;
+    cycleCounter.textContent = `${cycles}/4`;
 }
 
 startButton.addEventListener('click', startTimer);

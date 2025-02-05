@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Pomodoro Timer</h1>
-    <div id="timer">25:00</div>
-    <button id="start">Iniciar</button>
-    <button id="pause">Pausar</button>
-    <button id="reset">Reiniciar</button>
-    <div id="cycle-counter">Ciclos completados: 0</div>
+
+<body class="dark-style">
+    <div class="container box-style dark-style">
+        <div id="cycle-counter" class="cycle-count">0/4</div>
+        <div id="timer" class="timer">25:00</div>
+        <div class="buttons-container">
+            <button id="start" class="button">Iniciar</button>
+            <button id="pause" class="button">Pausar</button>
+            <button id="reset" class="button">Reiniciar</button>
+        </div>
+
+    </div>
+
 
     <script src="scripts/script.js"></script>
 </body>
+
 </html>
