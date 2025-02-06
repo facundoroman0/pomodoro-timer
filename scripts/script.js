@@ -71,6 +71,12 @@ function resetTimer() {
     cycleCounter.textContent = `${cycles}/4`;
 }
 
-startButton.addEventListener('click', startTimer);
-pauseButton.addEventListener('click', pauseTimer);
+startButton.addEventListener('click', () => {
+    startButton.classList.add('hide');
+    pauseButton.classList.remove('hide');
+    startTimer()});
+pauseButton.addEventListener('click', ()=>{
+    pauseButton.classList.add('hide');
+    startButton.classList.remove('hide');
+    pauseTimer()});
 resetButton.addEventListener('click', resetTimer);

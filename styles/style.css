@@ -18,13 +18,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
+}
+
+.hide{
+    display: none;
 }
 
 .container{
     width: 500px;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     padding: 20px;
     margin: 0 10%;
@@ -37,6 +41,7 @@ body {
 }
 
 .cycle-count{
+    font-size: 1.2rem;
     align-self: flex-end;
 }
 
@@ -45,19 +50,16 @@ body {
     color: var(--white);
 }
 
-
 .timer {
     font-family: 'Oxanium', serif;
-    width: 100%;
-    font-size: 6rem;
+    font-size: 6em;
     text-align: center;
-    margin: 10px 0;
 }
 
 .buttons-container{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    height: 60px;
+    position: relative;
 }
 
 .button img{
@@ -65,7 +67,6 @@ body {
     margin: 0 auto;
     padding: 0 2.5px;
 }
-
 
 .button {
     font-family: 'Raleway', serif;
@@ -77,12 +78,9 @@ body {
     transition: 0.1s, transform 0.1s;
 }
 
-
-
 .button:hover{
     transform: scale(1.05);
 }
-
 
 .buttons-container #start{
     background-color: var(--green);
@@ -93,6 +91,8 @@ body {
 }
 
 .buttons-container #pause{
+    position: absolute;
+    left: 0;
     background-color: var(--white);
 }
 
@@ -100,7 +100,8 @@ body {
     background-color: var(--white);
 }
 
-#cycle-counter {
-    margin-top: 15px;
-    font-size: 1.2rem;
+.buttons-container #reset{
+    position: absolute;
+    right: 0;
+    background-color: var(--white);
 }
