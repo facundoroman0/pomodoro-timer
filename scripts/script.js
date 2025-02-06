@@ -3,6 +3,7 @@ let startButton = document.getElementById('start');
 let pauseButton = document.getElementById('pause');
 let resetButton = document.getElementById('reset');
 let cycleCounter = document.getElementById('cycle-counter');
+let stateTitle = document.getElementById('state-title');
 
 const workTime = 5;
 const breakTime = 2;
@@ -25,6 +26,7 @@ function switchPhase() {
     if (isBreak) {
         cycles++;
         cycleCounter.textContent = `${cycles}/4`;
+        stateTitle.textContent = "Focus";
         if (cycles < 4) {
             isBreak = false;
             timeLeft = workTime;
@@ -34,6 +36,7 @@ function switchPhase() {
         }
     } else {
         isBreak = true;
+        stateTitle.textContent = "Break";
         timeLeft = breakTime;
     }
     updateTimer(timeLeft); 

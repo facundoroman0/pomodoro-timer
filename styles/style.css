@@ -18,7 +18,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .hide{
@@ -36,17 +36,14 @@ body {
 }
 
 .state-time{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 50px;
-    font-size: 25px;
 }
 
 .state-time label{
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -55,16 +52,11 @@ body {
     padding-left: 10px;
 }
 
-.state-time label .cycle-count{
-    width: fit-content;
-}
-
 .box-style{
     border-radius: 10px;
     border: 2px solid var(--white);
     box-shadow: 0px 10px 0px 0px var(--white);
 }
-
 
 .dark-style{
     background: var(--black);
@@ -96,7 +88,7 @@ body {
     border-radius: 50%;
     color: white;
     cursor: pointer;
-    transition: 0.1s, transform 0.1s;
+    transition: transform 0.1s;
 }
 
 .button:hover{
