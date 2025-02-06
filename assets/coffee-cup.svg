@@ -1,42 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <!-- Taza -->
+<svg width="200px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes smokeAnimation {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      50%{
+        transform: translateY(-1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-2px);
+        opacity: 0;
+      }
+    }
+
+    .smoke {
+      animation: smokeAnimation 3s ease-in-out infinite;
+    }
+
+    .two{
+      animation-delay: .5s;
+    }
+  </style>
+
   <path stroke="rgb(250,250,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
         d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2"/>
 
-  <!-- Humo 1 con animación suave -->
-  <path stroke="rgb(250,250,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-        d="M13 9s1-1 .5-2l-1-2C12 4 13 3 13 3">
-    <animateTransform attributeName="transform"
-                      type="translate"
-                      from="0,0" to="0,-2"
-                      dur="3s"
-                      repeatCount="indefinite"
-                      keySplines="0 0 1 1"
-                      calcMode="spline" />
-    <animate attributeName="opacity"
-             from="1" to="0"
-             dur="3s"
-             repeatCount="indefinite"
-             keySplines="0.42 0 1 1"
-             calcMode="spline" />
-  </path>
+  <path class="smoke" stroke="rgb(250,250,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+        d="M13 9s1-1 .5-2l-1-2C12 4 13 3 13 3"/>
 
-  <path stroke="rgb(250,250,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-        d="M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2">
-    <animateTransform attributeName="transform"
-                      type="translate"
-                      from="0,0" to="0,-2"
-                      dur="2.5s"
-                      repeatCount="indefinite"
-                      keySplines="0 0 1 1"
-                      calcMode="spline" />
-
-    <animate attributeName="opacity"
-             from="1" to="0"
-             dur="2.5s"
-             repeatCount="indefinite"
-             keySplines="0.42 0 1 1"
-             calcMode="spline" />
-  </path>
+  <path class="smoke two" stroke="rgb(250,250,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+        d="M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2"/>
 </svg>
