@@ -47,6 +47,10 @@ body {
     align-items: center;
 }
 
+.state-time label .state-title{
+    font-weight: bold;
+}
+
 .state-time label img{
     width: 40px;
     padding-left: 10px;
@@ -117,4 +121,20 @@ body {
     position: absolute;
     right: 0;
     background-color: var(--white);
+}
+
+.fade{
+    animation: fade 1s linear;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
 }

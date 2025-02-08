@@ -22,24 +22,40 @@ function updateTimer(timeLeft) {
     timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
+// add the state title with respective animation
+function stateTitleAnimation(state) {
+
+    stateTitle.classList.add('fade');
+    setTimeout(() => {
+        stateTitle.textContent = state;
+    }, 500);
+    setTimeout(() => {
+        stateTitle.classList.remove('fade');
+    }, 1500);
+}
+
 function switchPhase() {
     if (isBreak) {
         cycles++;
         cycleCounter.textContent = `${cycles}/4`;
-        stateTitle.textContent = "Focus";
+
+        stateTitleAnimation("Focus");
+
         if (cycles < 4) {
             isBreak = false;
             timeLeft = workTime;
         } else {
             updateTimer(0);
-            return 
+            stateTitleAnimation("Ended");
+            startButton.classList.remove('hide');
+            return
         }
     } else {
         isBreak = true;
-        stateTitle.textContent = "Break";
+        stateTitleAnimation("Break");
         timeLeft = breakTime;
     }
-    updateTimer(timeLeft); 
+    updateTimer(timeLeft);
     startTimer();
 }
 
@@ -77,9 +93,12 @@ function resetTimer() {
 startButton.addEventListener('click', () => {
     startButton.classList.add('hide');
     pauseButton.classList.remove('hide');
-    startTimer()});
-pauseButton.addEventListener('click', ()=>{
+    startTimer();
+});
+
+pauseButton.addEventListener('click', () => {
     pauseButton.classList.add('hide');
     startButton.classList.remove('hide');
-    pauseTimer()});
+    pauseTimer();
+});
 resetButton.addEventListener('click', resetTimer);
