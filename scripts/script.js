@@ -4,6 +4,7 @@ let pauseButton = document.getElementById('pause');
 let resetButton = document.getElementById('reset');
 let cycleCounter = document.getElementById('cycle-counter');
 let stateTitle = document.getElementById('state-title');
+let container = document.getElementById('container');
 
 const workTime = 5;
 const breakTime = 2;
@@ -34,12 +35,17 @@ function stateTitleAnimation(state) {
     }, 1500);
 }
 
+function breakTimeStyle(){
+    container.classList.toggle("box-style-green");
+}
+
 function switchPhase() {
     if (isBreak) {
         cycles++;
         cycleCounter.textContent = `${cycles}/4`;
 
         stateTitleAnimation("Focus");
+        breakTimeStyle();
 
         if (cycles < 4) {
             isBreak = false;
@@ -47,10 +53,13 @@ function switchPhase() {
         } else {
             updateTimer(0);
             stateTitleAnimation("Ended");
+            container.classList.remove("box-style-green");
             startButton.classList.remove('hide');
+            pauseButton.classList.add('hide');
             return
         }
     } else {
+        breakTimeStyle();
         isBreak = true;
         stateTitleAnimation("Break");
         timeLeft = breakTime;
@@ -81,6 +90,8 @@ function pauseTimer() {
 }
 
 function resetTimer() {
+    breakTimeStyle();
+    stateTitleAnimation("Focus");
     clearInterval(timer);
     isRunning = false;
     timeLeft = workTime;
