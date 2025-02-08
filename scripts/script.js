@@ -6,8 +6,8 @@ let cycleCounter = document.getElementById('cycle-counter');
 let stateTitle = document.getElementById('state-title');
 let container = document.getElementById('container');
 
-const workTime = 5;
-const breakTime = 2;
+const workTime = 25*60;
+const breakTime = 5*60;
 
 updateTimer(workTime);
 
